@@ -17,10 +17,10 @@ class Ball {
     this.moveVertical = moveVertical;
   };
 
-  draw() {
+  draw(fillStyle) {
     this.ctx.beginPath();
+    this.ctx.fillStyle = fillStyle
     this.ctx.arc(this.horizontal, this.vertical, this.radius, 0, Math.PI * 2);
-    this.ctx.fillStyle = "black";
     this.ctx.fill();
     this.ctx.closePath();
   };
@@ -29,6 +29,7 @@ class Ball {
     if (this.vertical + this.moveVertical > canvas.height - this.radius || this.vertical + this.moveVertical < this.radius) {
       this.moveVertical = -this.moveVertical;
     }
+
     if (this.horizontal + this.moveHorizontal > canvas.width - this.radius || this.horizontal + this.moveHorizontal < this.radius) {
       this.moveHorizontal = -this.moveHorizontal;
     }
@@ -44,8 +45,8 @@ function init() {
   const randomNumberOfBalls = getRandomArbitrary(10, 20);
 
   const balls = [];
-
-  for (let i = 0; i < randomNumberOfBalls; i++) {
+  
+  for (let i = 0; i < 5; i++) {
     const randomBallRaidus = getRandomArbitrary(10, 20);
     const horizontal = getRandomArbitrary(randomBallRaidus, canvas.width - randomBallRaidus);
     const vertical = getRandomArbitrary(randomBallRaidus, canvas.height - randomBallRaidus);
@@ -59,13 +60,24 @@ function init() {
       getRandomDistanceToMove(),
     );
     balls.push(ball);
-    console.log(ball.horizontal, ball.vertical)
   };
 
   setInterval(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    balls.forEach((ball) => {
-      ball.draw();
+    balls.forEach((ball, i) => {
+      let color = 'black';
+      for (let j = 0; j < balls.length; j++) {
+        if (i == j) {
+          continue;
+        }
+        const d = Math.sqrt(Math.pow(balls[i].horizontal - balls[j].horizontal, 2) + Math.pow(balls[i].vertical - balls[j].vertical, 2))
+
+        if (balls[i].radius + balls[j].radius > d) {
+          color = 'red'
+          break;
+        } 
+      }
+      ball.draw(color);
       ball.moveBall();
     });
   }, 1000 / 60);
@@ -78,5 +90,7 @@ function getRandomArbitrary(min, max) {
 function getRandomDistanceToMove() {
   return getRandomArbitrary(1, 10) % 2 === 0 ? getRandomArbitrary(1, 4) : getRandomArbitrary(-4, -1);
 };
+
+
 
 init();
