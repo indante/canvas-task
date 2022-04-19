@@ -1,0 +1,22 @@
+{
+  "name": "we-ar_assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "canvas.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indante/we-ar_assignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indante/we-ar_assignment/issues"
+  },
+  "homepage": "https://github.com/indante/we-ar_assignment#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
