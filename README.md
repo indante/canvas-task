@@ -16,6 +16,6 @@
 
 - canvas 경험이 없어 [MDN 벽돌깨기](https://developer.mozilla.org/ko/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript) 튜토리얼을 진행함
 - 튜토리얼을 진행하며 공이 벽에 부딪혔을 때 반사각으로 튕겨져 나오게 구현함
-- OOP에 대한 경험이 없어 문서와 영상을 보며 최대한 효율적으로 사용하려고 노력함
+- OOP에 대한 경험이 없어 문서와 영상을 보며 학습하며 `class` 기반으로 리팩토링함
 - 랜덤한 각도에 맞추어 일관된 x, y의 움직임을 알기 위해 사분면의 개념에 접근하여 `getMovement` 함수를 구현함
-- TypeScript 경험이 없어 JavaScript로 구현 후 TypeScript로 Refactoring를 진행함
+- TypeScript 경험이 없어 JavaScript로 구현 후 TypeScript로 리팩토링함
