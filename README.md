@@ -1,3 +1,7 @@
+# WE-AR Assignment
+
+[데모 바로가기](https://indante.github.io/we-ar_assignment/src/canvas.html)
+
 ### 목표
 
 - [x] 캔버스 사이즈는 가로 1000, 세로 500 고정입니다.
